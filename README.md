@@ -16,13 +16,17 @@
 ![image](https://github.com/user-attachments/assets/f9fd06aa-44e1-4105-8c42-3ece5bd74d08)
 2. В настройках Open server в пункте "Домены" Выбрать "Ручное управление" и добавить путь к папке public. Результат показан на скриншоте
 ![image](https://github.com/user-attachments/assets/72f13e2c-d9bf-469a-85c2-8a14c257ec1d)
-3. Зайти в PhpMyAdmin и создать БД с произвольным именем
-4. Настройте файл `.env` для подключения к базе данных, как показано на скриншоте.
+3. Запустите Open Server от имени администратора. Зайдите в настройки, выберите раздел модули. Укажите версию MySQL и сохранитесь
+4. Сделайте так, чтобы версии http, php и MySQL совпадали
+![image](https://github.com/user-attachments/assets/9bccc563-ab3b-4794-bc61-2b04da7dc150)
+5. Зайти в PhpMyAdmin и создать БД с произвольным именем
+6. Переименуйте файл .env.example в .env
+7. Настройте файл `.env` для подключения к базе данных, как показано на скриншоте.
 ![image](https://github.com/user-attachments/assets/b6fa88aa-e5d5-4c2c-9f50-344accbca7b6)
-5. Откройте консоль OpenServer, перейдите в папку проекта, и выполните следующие команды:
-6. Установите зависимости командой `composer install`.
-7. Сгенерируйте ключ с помощью `php artisan key:generate`.
-8. Выполните миграции командой `php artisan migrate`.
+8. Откройте консоль OpenServer, перейдите в папку проекта, и выполните следующие команды:
+9. Установите зависимости командой `composer install`.
+10. Сгенерируйте ключ с помощью `php artisan key:generate`.
+11. Выполните миграции командой `php artisan migrate`.
 
 
 
