@@ -10,6 +10,8 @@
 </head>
 <body>
     <a href="{{ route('index') }}" style="text-decoration: none; color: white; background-color: green; padding: 10px 20px; border-radius: 5px;">Назад</a>
+    <a href="{{ route('ingredients') }}" style="display: inline-block; margin-top: 10px; text-decoration: none; color: white; background-color: blue; padding: 10px 20px; border-radius: 5px;">Добавить ингредиент</a>
+
     <h1>Добавить рецепт</h1>
     @if(session('success'))
         <p style="color: green;">{{ session('success') }}</p>

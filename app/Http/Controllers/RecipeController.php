@@ -17,11 +17,11 @@ class RecipeController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255|unique:ingredients,name',
+            'name' => 'required|string|max:255|unique:recipes,name',
             'description' => 'required|string|max:1000',
             'ingredients' => 'required|array',
             'ingredients.*' => 'exists:ingredients,id'
-        ]);
+        ]);        
 
         $recipe = Recipes::create([
             'name' => $request->input('name'),
