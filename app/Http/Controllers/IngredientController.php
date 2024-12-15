@@ -15,13 +15,11 @@ class IngredientController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255|unique:ingredients,name',
-            'description' => 'required|string|max:1000'
+            'name' => 'required|string|max:255|unique:ingredients,name'
         ]);
 
         ingredients::create([
-            'name' => $request->input('name'),
-            'description' => $request->input('description')
+            'name' => $request->input('name')
         ]);
 
         return redirect()->route('ingredients')->with('success', 'Ингредиент добавлен!');

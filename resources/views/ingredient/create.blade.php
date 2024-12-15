@@ -13,19 +13,11 @@
     @endif
     <form action="{{ route('ingredients.create') }}" method="POST">
         @csrf
-
         <label for="name">Название ингредиента:</label>
         <input type="text" id="name" name="name" value="{{ old('name') }}" required>
         @error('name')
             <p style="color: red;">{{ $message }}</p>
         @enderror
-
-        <label for="description">Описание ингредиента:</label>
-        <textarea id="description" name="description" required>{{ old('description') }}</textarea>
-        @error('description')
-            <p style="color: red;">{{ $message }}</p>
-        @enderror
-        
         <button type="submit">Добавить</button>
     </form>
 </body>
