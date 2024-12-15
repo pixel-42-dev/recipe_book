@@ -16,4 +16,11 @@ Route::post('/ingredients/create', [IngredientController::class, 'create'])->nam
 Route::get('/recipes', [RecipeController::class, 'view'])->name('recipes');
 Route::post('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create');
 
-Route::get('/admin', [AdminController::class, 'view'])->name('admin');
+
+Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminController::class, 'login']);
+Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+
+Route::middleware('admin.auth')->group(function () {
+    Route::get('/admin', [AdminController::class, 'viewDashboard'])->name('admin.dashboard');
+});
