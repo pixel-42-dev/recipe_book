@@ -12,6 +12,8 @@
 
 ### Инструкции по установке
 
+#### Windows
+
 1. Склонировать репозиторий на локальную машину в папку domains в OpenServer с помощью git clone
 ![image](https://github.com/user-attachments/assets/f9fd06aa-44e1-4105-8c42-3ece5bd74d08)
 2. В настройках Open server в пункте "Домены" Выбрать "Ручное управление" и добавить путь к папке public. Результат показан на скриншоте
@@ -27,6 +29,21 @@
 9. Установите зависимости командой `composer install`.
 10. Сгенерируйте ключ с помощью `php artisan key:generate`.
 11. Выполните миграции командой `php artisan migrate`.
+
+#### MacOS ARM
+
+1. Установить [MAMP](https://www.mamp.info/en/mac/)
+2. Склонировать репозиторий на локальную машину в папку /Applications/MAMP/htdocs с помощью git clone
+3. Запустить MAMP
+4. Зайти в PhpMyAdmin и создать БД с произвольным именем
+5. Установите зависимости командой `pgp composer.phar install` в корневой папке `/usr/local/bin/composer`. Опционально обновить composer командой `php composer.phar update`
+6. Переименуйте файл .env.example в .env. Если файла .env.example нет, то необходимо создать свой, используя шаблон
+7. Настройте файл `.env` для подключения к базе данных, как показано на скриншоте.
+![image](https://github.com/user-attachments/assets/b6fa88aa-e5d5-4c2c-9f50-344accbca7b6)
+10. Сгенерируйте ключ с помощью команды `php artisan key:generate`.
+11. Выполните миграции с помошью команды `php artisan migrate`.
+12. Запустите проект локально с помощью команды `php artisan serve`
+
 
 
 
