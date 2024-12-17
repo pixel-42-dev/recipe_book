@@ -17,7 +17,6 @@ class AdminController extends Controller
 
     public function viewDashboard()
     {
-        //$recipes = Recipes::all(); // Получаем все рецепты
         $recipes = Recipes::with('ingredients')->get();
 
         // Получаем ингредиенты, связанные с этими рецептами через таблицу ingredient_recipe
@@ -33,22 +32,39 @@ class AdminController extends Controller
 
     }
 
-    public function showRecipe($id)
-    {
-        $ingridients = new ingredients_recipe;
-        return view('search', ['data' => $ingridients->find($id)]);
-    }
-
     public function deleteRecipe($id)
     {
+        //Ищем рецепт по его id
         $recipe = Recipes::find($id);
 
+        // Проверяем, найдена ли запись
         if (!$recipe) {
             return redirect()->route('admin.dashboard')->with('error', 'Рецепт не найден!');
         }
 
+        //Удаляем запись
         $recipe->delete();
         return redirect()->route('admin.dashboard')->with('success', 'Рецепт удален!');
+
+    }
+
+    public function deleteIngredient($recipeId, $ingredientId)
+    {
+
+        // Ищем запись в связующей таблице ingredient_recipe
+        $ingredientRecipe = ingredient_recipe::where('recipes_id', $recipeId)
+        ->where('ingredients_id', $ingredientId)
+        ->first();
+
+        // Проверяем, найдена ли запись
+        if (!$ingredientRecipe) {
+        return redirect()->route('admin.dashboard')->with('error', 'Ингредиент не найден!');
+        }
+
+        // Удаляем запись
+        $ingredientRecipe->delete();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Ингредиент удален!');
 
     }
 
