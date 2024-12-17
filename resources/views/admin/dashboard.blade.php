@@ -45,7 +45,6 @@
                 @foreach($recipe->ingredients as $ingredient)
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 10px; width: parent; border-bottom: solid; border-color: green;">
                         <h5>{{ $ingredient->name }}</h5>
-                         <!-- <a href="{{ route('admin.ingredient.delete', ['recipeId' => $recipe->id, 'ingredientId' => $ingredient->id]) }}"><button style="margin-bottom: 10px";>Удалить</button></a> -->
                          <form
                             id="delete-form-{{ $recipe->id }}-{{ $ingredient->id }}"
                             action="{{ route('admin.ingredient.delete', ['recipeId' => $recipe->id, 'ingredientId' => $ingredient->id]) }}"
@@ -68,6 +67,7 @@
                         @csrf
                         @method('GET')
                     </form>
+                <a href="{{ route('admin.recipe.edit', $recipe->id) }}"><button type="button">Редактировать</button></a>
                 <a href="#" onclick="confirmRecipeDelete(event, {{ $recipe->id }})"><button style="margin-bottom: 10px";>Удалить</button></a>
             </div>
         @endforeach

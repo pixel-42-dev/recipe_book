@@ -32,6 +32,30 @@ class AdminController extends Controller
 
     }
 
+    public function editRecipeForm($id)
+    {
+        $recipe = Recipes::findOrFail($id); // Находим рецепт по ID
+
+        return view('recipe.edit', compact('recipe')); // Передаем рецепт в представление
+    }
+
+
+    public function updateRecipeDescription(Request $request, $id)
+    {
+        // Валидация данных формы
+        $request->validate([
+            'description' => 'required|string|max:255',
+        ]);
+
+        // Находим рецепт и обновляем поле description
+        $recipe = Recipes::findOrFail($id);
+        $recipe->description = $request->input('description');
+        $recipe->save();
+
+        // Перенаправляем с сообщением об успехе
+        return redirect()->route('admin.dashboard')->with('success', 'Описание рецепта обновлено!');
+    }
+
     public function deleteRecipe($id)
     {
         //Ищем рецепт по его id
