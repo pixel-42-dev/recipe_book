@@ -32,11 +32,11 @@
 
 #### MacOS ARM
 
-1. Установить [MAMP](https://www.mamp.info/en/mac/)
-2. Склонировать репозиторий на локальную машину в папку /Applications/MAMP/htdocs с помощью git clone
-3. Запустить MAMP
-4. Зайти в PhpMyAdmin и создать БД с произвольным именем
-5. Установите зависимости командой `pgp composer.phar install` в корневой папке `/usr/local/bin/composer`. Опционально обновить composer командой `php composer.phar update`
+1. Установите [MAMP](https://www.mamp.info/en/mac/)
+2. Склонируйте репозиторий на локальную машину в папку /Applications/MAMP/htdocs с помощью git clone
+3. Запустите MAMP
+4. Зайдите в PhpMyAdmin и создайте БД с произвольным именем
+5. Установите зависимости командой `php composer.phar install`. В корневой папке `/usr/local/bin/composer` должен быть установлен composer. Опционально обновить composer командой `php composer.phar update`
 6. Переименуйте файл .env.example в .env. Если файла .env.example нет, то необходимо создать свой, используя шаблон
 7. Настройте файл `.env` для подключения к базе данных, как показано на скриншоте.
 ![image](https://github.com/user-attachments/assets/b6fa88aa-e5d5-4c2c-9f50-344accbca7b6)

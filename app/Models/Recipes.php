@@ -13,6 +13,6 @@ class Recipes extends Model
 
     public function ingredients()
     {
-        return $this->belongsToMany(Ingredients::class, 'ingredient_recipe');
+        return $this->belongsToMany(ingredients::class, 'ingredient_recipe', 'recipes_id', 'ingredients_id');
     }
 }

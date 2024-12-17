@@ -21,6 +21,9 @@ Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('adm
 Route::post('/admin/login', [AdminController::class, 'login']);
 Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
+Route::get('/admin/delete/{id}', [AdminController::class, 'deleteRecipe'])->name('admin.delete');
+
+
 Route::middleware('admin.auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'viewDashboard'])->name('admin.dashboard');
 });
