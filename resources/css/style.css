@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    padding-block-start: 150px;
+    padding-block-end: 150px;
+    background-color: #3CC579;
+}
