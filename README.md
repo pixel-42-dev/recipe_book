@@ -12,31 +12,34 @@
 
 ### Инструкции по установке
 
-#### Windows
+#### Windows -  [Open Server 5.4.3](https://drive.google.com/file/d/1FkY7IBrIGp5-gY2QaXzc4wXNXQEoj2aW/view)
 
-1. Склонировать репозиторий на локальную машину в папку domains в OpenServer с помощью git clone
+1. Склонировать репозиторий на локальную машину в папку C:\OSPanel\domains\ в OpenServer с помощью git clone
 ![image](https://github.com/user-attachments/assets/f9fd06aa-44e1-4105-8c42-3ece5bd74d08)
-2. В настройках Open server в пункте "Домены" Выбрать "Ручное управление" и добавить путь к папке public. Результат показан на скриншоте
+2. В настройках Open server в пункте "Домены" Выбрать "Ручное управление" и добавить путь к папке public. Результат показан на скриншоте:
+
 ![image](https://github.com/user-attachments/assets/72f13e2c-d9bf-469a-85c2-8a14c257ec1d)
-3. Запустите Open Server от имени администратора. Зайдите в настройки, выберите раздел модули. Укажите версию MySQL и сохранитесь
+3. Запустите Open Server от имени администратора. Зайдите в настройки, выберите раздел модули. Укажите версию MySQL 8.0 и сохранитесь
+
 4. Сделайте так, чтобы версии http, php и MySQL совпадали
 ![image](https://github.com/user-attachments/assets/9bccc563-ab3b-4794-bc61-2b04da7dc150)
-5. Зайти в PhpMyAdmin и создать БД с произвольным именем
-6. Переименуйте файл .env.example в .env
-7. Настройте файл `.env` для подключения к базе данных, как показано на скриншоте.
+
+6. Зайти в PhpMyAdmin - правой кнопкой по Open Server Panel - Дополнительно в трее (убедитесь, что у программы зеленый флажок, если нет правая кнопка - Запустить)
+7. Логин root - пароль пустой. Идем в Databases - и создаем БД с произвольным именем, например, 'db'
+8. В папке проекта C:\OSPanel\domains\recipe_book переименуйте файл .env.example в '.env'. Настройте файл `.env` для подключения к базе данных, как показано на скриншоте. Поменяйте DB_DATABASE=db (вместо db - ваше имя бд из шага 6)
 ![image](https://github.com/user-attachments/assets/b6fa88aa-e5d5-4c2c-9f50-344accbca7b6)
-8. Откройте консоль OpenServer, перейдите в папку проекта, и выполните следующие команды:
-9. Установите зависимости командой `composer install`.
-10. Сгенерируйте ключ с помощью `php artisan key:generate`.
-11. Выполните миграции командой `php artisan migrate`.
+9. Откройте консоль OpenServer, перейдите в папку проекта, и выполните следующие команды:
+10. Установите зависимости командой `composer install`.
+11. Сгенерируйте ключ с помощью `php artisan key:generate`.
+12. Выполните миграции командой `php artisan migrate`.
 
 #### MacOS ARM
 
-1. Установить [MAMP](https://www.mamp.info/en/mac/)
-2. Склонировать репозиторий на локальную машину в папку /Applications/MAMP/htdocs с помощью git clone
-3. Запустить MAMP
-4. Зайти в PhpMyAdmin и создать БД с произвольным именем
-5. Установите зависимости командой `pgp composer.phar install` в корневой папке `/usr/local/bin/composer`. Опционально обновить composer командой `php composer.phar update`
+1. Установите [MAMP](https://www.mamp.info/en/mac/)
+2. Склонируйте репозиторий на локальную машину в папку /Applications/MAMP/htdocs с помощью git clone
+3. Запустите MAMP
+4. Зайдите в PhpMyAdmin и создайте БД с произвольным именем
+5. Установите зависимости командой `php composer.phar install`. В корневой папке `/usr/local/bin/composer` должен быть установлен composer. Опционально обновить composer командой `php composer.phar update`
 6. Переименуйте файл .env.example в .env. Если файла .env.example нет, то необходимо создать свой, используя шаблон
 7. Настройте файл `.env` для подключения к базе данных, как показано на скриншоте.
 ![image](https://github.com/user-attachments/assets/b6fa88aa-e5d5-4c2c-9f50-344accbca7b6)
@@ -51,8 +54,9 @@
 
 1. `routes/web.php` - маршруты. При переходе пользователя по ссылке с данным маршрутом, ответ генерируется соответствующим методом соответствующего контроллера
 2. `app/Http/Controllers` - контроллеры. В своих методах обрабатывают информацию и возвращают пользователю ответ
-3. `resources/views` - странички, которые отдаются пользователю. В них зачастую подставляются данные с помощью PHP. Также, в `resources` лежат css, js и всё такое
-4. `app/Http/Models`, `database/migrations` - миграции
+3. `resources/views` - странички, которые отдаются пользователю. В них зачастую подставляются данные с помощью PHP.
+4. `public` - css, js. подключать с помощью `html <link rel="stylesheet" href="{{ asset('css/название_вашего_файла.css') }}">`
+5. `app/Http/Models`, `database/migrations` - миграции
 
 В принципе, это всё что нужно знать для того чтобы создать что-то не слишком сложное.
 

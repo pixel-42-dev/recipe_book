@@ -18,7 +18,7 @@
             <label for="password">Пароль</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <button type="submit">Войти</button>
+        <button style="color: white; background-color: green;" type="submit">Войти</button>
     </form>
 </body>
 </html>
