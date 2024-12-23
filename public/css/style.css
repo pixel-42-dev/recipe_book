@@ -1,3 +1,167 @@
+/* Общие стили */
 * {
-    color: red;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    height: 100%
+}
+
+.page {
+    max-width: 1200px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 150px;
+    background-color: #F5F4F0;
+}
+
+/* Стили для шапки */
+
+
+.header {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 3px solid #3CC579;
+}
+
+.header__title {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+/* Стили для основного контента */
+.main {
+    margin-top: 150px;
+}
+
+.ingredients-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 100px;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.main__label {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.select2 {
+    border: 2px solid #3CC579;
+    border-radius: 5px;
+    font-size: 21px;
+}
+
+.search {
+    background-color: #3CC579;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 21px;
+    padding: 0 44px;
+}
+
+.add-recipe {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #3CC579;
+    padding: 8px 88px;
+    font-size: 21px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: fit-content
+}
+
+.section__title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    list-style: none;
+    counter-reset: step;
+    padding: 0;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 21px;
+    gap: 25px;
+}
+
+.item::before {
+    counter-increment: step;
+    content: counter(step);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #3CC579;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.instructions-section {
+    margin-bottom: 300px;
+}
+
+/* Стили для подвала */
+.footer {
+    padding-top: 25px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: start;
+    border-top: 3px solid #3CC579;
+}
+
+.connection-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.connection-item {
+    display: flex;
+    flex-direction: row;
+    font-size: 21px;
+    gap: 10px;
+}
+
+.qrcode {
+    justify-self: center;
+}
+
+.footer__text {
+    font-size: 21px;
+}
+
