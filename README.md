@@ -85,6 +85,21 @@
 
 
 
+### Инструкция по сборке docker
+
+1. Настроить .env для работы с БД в Docker
+    DB_CONNECTION=mysql
+    DB_HOST=db
+    DB_PORT=3306
+    DB_DATABASE=recipe_book
+    DB_USERNAME=root
+    DB_PASSWORD=rootpassword
+2. Собрать образ с помощью команды docker-compose up --build
+3. Перейти в phpMyAdmin по адресу http://localhost:8080/ и создать бд recipe_book
+4. Перейти на http://localhost/ и тыкнуть на кнопку run migrations
+
+
+
 ### Дополнительная информация
 
 !!! Для создания моделей, миграций и контроллеров используем команды attisan (представлены выше), ручками тоже можно, но так легко ошибиться.

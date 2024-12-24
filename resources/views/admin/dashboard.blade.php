@@ -51,7 +51,7 @@
                             method="POST"
                             style="display: none;">
                             @csrf
-                            @method('GET')
+                            @method('DELETE')
                         </form>
                          <a href="#" onclick="confirmIngredientDelete(event, {{ $recipe->id }}, {{ $ingredient->id }})">
                             <button style="margin-bottom: 10px;">Удалить</button>
@@ -65,7 +65,7 @@
                         method="POST"
                         style="display: none;">
                         @csrf
-                        @method('GET')
+                        @method('DELETE')
                     </form>
                 <a href="{{ route('admin.recipe.edit', $recipe->id) }}"><button type="button">Редактировать</button></a>
                 <a href="#" onclick="confirmRecipeDelete(event, {{ $recipe->id }})"><button style="margin-bottom: 10px";>Удалить</button></a>
