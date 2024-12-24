@@ -69,6 +69,7 @@ class AdminController extends Controller
         }
     }
 
+
     public function deleteIngredient($recipeId, $ingredientId)
     {
         $this->ingredientRepository->deleteFromRecipe($recipeId, $ingredientId);
