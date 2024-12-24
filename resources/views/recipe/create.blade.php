@@ -74,9 +74,11 @@
         <img class="qrcode" src="{{ asset('icons/qrcode.svg') }}" alt="qrcode">
         <div class="about__footer">
             <h2 class="footer__title">О нас:</h2>
-            <p class="footer__text">Веселый коллектив, любим вкусно покушать</p>
+            <p class="footer__text">Веселый коллектив, любим
+            вкусно покушать</p>
         </div>
     </footer>
+    <script>
 </div>
 </body>
 </html>
