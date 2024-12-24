@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Добавить рецепт</title>
+  <link rel="stylesheet" href="./css/recepi.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <header>
+
+    <h1> <img src="./img/logo.png" alt="Logo" class="logo">Добавить рецепт</h1>
+  </header>
+
+  <main>
+    <div class="recipe-form">
+      <div class="both-recipe">
+        <input type="text" placeholder="Название рецепта" class="recipe-name">
+        <input type="text" placeholder="Ингредиенты" class="recipe-ingredients">
+      </div>
+      <textarea placeholder="Описание рецепта" class="recipe-description"></textarea>
+      <div class="button-group">
+        <button class="add-recipe">Добавить рецепт</button>
+        <button class="add-ingredient">Добавить ингредиент</button>
+      </div>
+    </div>
+
+    <section class="instructions">
+      <h2>Инструкция по использованию:</h2>
+      <div class="instruction-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <p>В первую очередь напишите название вашего рецепта. Выберите необходимые ингредиенты. Если какой-то из них не был обнаружен, нажмите на кнопку "Добавить ингредиент".</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <p>Постарайтесь как можно подробнее описать метод приготовления блюда в поле "Описание рецепта".</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <p>После заполнения всех полей, вы можете нажать на кнопку "Добавить рецепт".</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="contact-section">
+        <h3>Как с нами связаться:</h3>
+        <div class="contact-info">
+          <a href="mailto:recipebook@gmail.com"><img src="./img/message.png" alt="Email">recipebook@gmail.com</a>
+          <a href="https://wa.me/839855995535"><img src="./img/phone.png" alt="Phone">+7 (985)-599-55-35</a>
+          <a href="https://t.me/recipebook"><img src="./img/telegram.png" alt="Telegram">@recipebook</a>
+        </div>
+      </div>
+      <div class="qr-section">
+        <a href="#"><img src="./img/qr.png" alt="QR Code" class="qr-code"></a>
+
+      </div>
+      <div class="about-section">
+        <h3>О нас:</h3>
+        <p>Веселый коллектив, любим вкусно покушать:)</p>
+      </div>
+    </footer>
+
+
+  </main>
+</div>
+</body>
+</html>

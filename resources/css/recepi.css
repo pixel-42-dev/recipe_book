@@ -1,0 +1,149 @@
+/* Base styles */
+:root {
+  --primary-green: #3CC579;
+  --light-gray: #F5F4F0;
+  --black: #000000;
+  --white: #FFFFFF;
+  --container-width: 1210px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 21px;
+  line-height: 1.6;
+  background-color: var(--light-gray);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Recipe Form */
+.recipe-form {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recipe-name, .recipe-ingredients {
+  padding: 15px;
+  border: 2px solid var(--primary-green);
+  border-radius: 8px;
+  font-size: 21px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.recipe-description {
+  height: 200px;
+  padding: 15px;
+  border: 2px solid var(--primary-green);
+  border-radius: 8px;
+  font-size: 21px;
+  font-family: 'Open Sans', sans-serif;
+  resize: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+}
+
+.add-recipe, .add-ingredient {
+  padding: 15px 30px;
+  background-color: var(--primary-green);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 21px;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  flex: 1;
+}
+
+/* Instructions */
+.instructions {
+  margin-top: 60px;
+}
+
+.instructions h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.instruction-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.step-number {
+  background-color: var(--primary-green);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.both-recipe input:first-child{
+  width: 30%;
+}
+.both-recipe input:last-child{
+  width: 68%;
+}
+
+.both-recipe{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .recipe-name,
+  .recipe-ingredients,
+  .recipe-description {
+    font-size: 18px;
+  }
+
+  .add-recipe,
+  .add-ingredient {
+    font-size: 18px;
+    width: 100%;
+  }
+}
